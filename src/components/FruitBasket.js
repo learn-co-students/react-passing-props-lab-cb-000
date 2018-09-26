@@ -8,7 +8,7 @@ const FruitBasket = props => {
     <div className="fruit-basket">
       <Filter handleChange={props.updateFilterCallback} filters={props.filters} />
       <FilteredFruitList
-        filter={props.currentFilter} items={props.fruit} />
+        filter={props.currentFilter} fruit={props.fruit} />
     </div>
   );
 }
