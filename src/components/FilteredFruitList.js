@@ -10,7 +10,7 @@ const FilteredFruitList = ({fruit, filter}) => {
 }
 
 FilteredFruitList.defaultProps = {
-  fruit: null,
+  fruit: [],
   filter: null
 }
 
