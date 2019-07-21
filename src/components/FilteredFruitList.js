@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 
-class FilteredFruitList extends Component {
-  constructor(props) {
-    super(props);
+const FilteredFruitList = ({fruit,filter}) => {
+  const list = !filter ? fruit : fruit.filter(item => item.fruit_type === filter);
+  return(
+    <ul className="fruit-list">
+      {list.map((item, index) => <li key={index}>{item.char}</li>)}
+    </ul>
+  );
+}
 
-    this.state = {
-      items: []
-    };
-  }
-
+FilteredFruitList.defaultProps = {
+  fruit:'',
+  filter:null
+};
+/*
+{
   componentDidMount() {
     fetch('/api/fruit')
       .then(response => response.json())
@@ -16,14 +22,13 @@ class FilteredFruitList extends Component {
   }
 
   render() {
-    const list = !this.props.filter || this.props.filter === 'all' ? this.state.items : this.state.items.filter(i => i.fruit_type === this.props.filter);
+
 
     return (
-      <ul className="fruit-list">
-        {list.map((item, index) => <li key={index}>{item.char}</li>)}
-      </ul>
+
     );
   }
 }
+*/
 
 export default FilteredFruitList;
